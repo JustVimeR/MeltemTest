@@ -5,12 +5,23 @@
               <img src="assets/logo.png" alt="1" class="logo">
             </div>
             <div class="col-md-6 navbar-routes">
-                <a class="nav-routes" href="#">Компанія</a>
-                <a class="nav-routes" href="#">Продукція</a>
-                <a class="nav-routes" href="#">Статті</a>
-                <a class="nav-routes" href="#">Рішення</a>
-                <a class="nav-routes" href="#">Контакти</a>
+                <div class="mobile-dropdown-toggle mobile-only" 
+                    *ngIf="isModalOpen" 
+                    (click)="toggleModal()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                        <path d="M0.435123 0.643617C1.01529 0.0658433 1.95592 0.0658433 2.53608 0.643617L21.4447 19.4744C22.0249 20.0521 22.0249 20.9889 21.4447 21.5667C20.8646 22.1444 19.9239 22.1444 19.3438 21.5667L0.435123 2.73592C-0.145041 2.15815 -0.145041 1.22139 0.435123 0.643617Z" fill="#A2A2A2"/>
+                        <path d="M0.555279 21.3564C-0.0248851 20.7786 -0.0248851 19.8419 0.555279 19.2641L19.4639 0.433331C20.0441 -0.144443 20.9847 -0.144444 21.5649 0.43333C22.145 1.0111 22.145 1.94786 21.5649 2.52564L2.65624 21.3564C2.07607 21.9342 1.13544 21.9342 0.555279 21.3564Z" fill="#A2A2A2"/>
+                    </svg>
+                </div>
+                <div *ngIf="showRoutes">
+                    <a class="nav-routes" href="#">Компанія</a>
+                    <a class="nav-routes" href="#">Продукція</a>
+                    <a class="nav-routes" href="#">Статті</a>
+                    <a class="nav-routes" href="#">Рішення</a>
+                    <a class="nav-routes" href="#">Контакти</a>
+                </div>
             </div>
+            
             <div class="col-md-4 nav-contacts">
                 <div class="navbar-contact">
                     <span>0 (800) 00-00-00</span>
@@ -24,6 +35,14 @@
                 >
                     {{lang}}
                 </button>  
+                <div class="mobile-dropdown-open mobile-only" 
+                *ngIf="!isModalOpen" 
+                (click)="toggleModal()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" viewBox="0 0 30 16" fill="none">
+                    <rect y="0.5" width="30" height="3" rx="1.5" fill="#859BA6"/>
+                    <rect y="12.5" width="30" height="3" rx="1.5" fill="#859BA6"/>
+                </svg>
+            </div>
             </div>
           </div>
     </div>
@@ -32,7 +51,7 @@
 <section class="banner_wrapper">
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col banner-col">
                 <h1 class="header">Meltem</h1>
 
                 <div class="sub_header">Meltem – це гарантовано якісне вентиляційне обладнання 
@@ -72,6 +91,31 @@
     <h2 class="submit-header">Дякуємо 
         за заявку!</h2>
     <div class="submit-subheader">Ваші дані успішно надіслані!</div>
+</div>
+
+<div class="molile-nav" *ngIf="isModalOpen">
+    <div class="list-frame">
+        <a class="nav-routes" href="#">Компанія</a>
+        <a class="nav-routes" href="#">Продукція</a>
+        <a class="nav-routes" href="#">Статті</a>
+        <a class="nav-routes" href="#">Рішення</a>
+        <a class="nav-routes" href="#">Контакти</a>
+    </div>
+    <div class="menu-contacts">
+        <div class="menu-contact">
+            <span>0 (800) 00-00-00</span>
+        </div>
+        <div class="menu-btn-wrapper">
+            <button 
+                *ngFor="let lang of languages" 
+                class="menu-btn" 
+                [ngClass]="{'active': lang === selectedLanguage}" 
+                (click)="setLanguage(lang)"
+            >
+                {{lang}}
+            </button>  
+        </div>
+    </div>
 </div>
 
 <app-main-page-window 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-main-page',
@@ -11,7 +11,38 @@ export class MainPageComponent {
   isSubmitFormVisible = false;
   isModalVisible = false;
   isCookieVisible = true;
+  showRoutes = true;
+  isDesktop = true;
+  isModalOpen: boolean = false;
 
+  constructor() {
+    window.onresize = () => {
+        this.isDesktop = window.innerWidth > 768;
+        if (this.isDesktop) {
+            this.showRoutes = false;
+        }
+    };
+ }
+ 
+ngOnInit() {
+  this.checkScreenSize();
+}
+
+@HostListener('window:resize', ['$event'])
+onResize(event: boolean) {
+  this.checkScreenSize();
+}
+
+private checkScreenSize() {
+  this.isDesktop = window.innerWidth > 320 ? true : false;
+  if(this.isDesktop){
+    this.showRoutes = true;
+  }
+}
+
+  toggleModal(): void {
+    this.isModalOpen = !this.isModalOpen;
+  }
 
   setLanguage(lang: string): void {
     this.selectedLanguage = lang;
@@ -33,7 +64,7 @@ export class MainPageComponent {
     this.isModalVisible = false; 
     this.isSubmitFormVisible = true;
 
-    setTimeout(() => {
+  setTimeout(() => {
       this.isSubmitFormVisible = false;
     }, 5000);
   }
