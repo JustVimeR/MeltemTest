@@ -1,0 +1,36 @@
+<div class="form-wrapper">
+    <div class="form-close" (click)="closeWindow()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M0.435123 0.643617C1.01529 0.0658433 1.95592 0.0658433 2.53608 0.643617L21.4447 19.4744C22.0249 20.0521 22.0249 20.9889 21.4447 21.5667C20.8646 22.1444 19.9239 22.1444 19.3438 21.5667L0.435123 2.73592C-0.145041 2.15815 -0.145041 1.22139 0.435123 0.643617Z" fill="#A2A2A2"/>
+            <path d="M0.555279 21.3564C-0.0248851 20.7786 -0.0248851 19.8419 0.555279 19.2641L19.4639 0.433331C20.0441 -0.144443 20.9847 -0.144444 21.5649 0.43333C22.145 1.0111 22.145 1.94786 21.5649 2.52564L2.65624 21.3564C2.07607 21.9342 1.13544 21.9342 0.555279 21.3564Z" fill="#A2A2A2"/>
+        </svg>
+        <!-- буду успівать - переробть хрестик -->
+    </div>
+        <h1 class="form-header">Залишайте заявку</h1>
+        <div class="form-subheader">Ми зв’яжемося з вами найближчим часом.</div>
+        <form [formGroup]="form">
+            <input 
+                type="text"
+                class="form-input input-name"
+                placeholder="Ваше імя*"
+                formControlName="name"
+                />
+                <div *ngIf="form.controls['name'].invalid && form.controls['name'].touched" class="error">
+                    Введіть ваше ім'я.
+                </div>
+            <div class="input-container">
+            <input 
+                type="text"
+                placeholder="+380-00-000-00-00*"
+                class="form-input input-with-bg"
+                formControlName="phone"
+                maxlength="13"
+                phoneMask/>
+                <div *ngIf="form.controls['phone'].invalid && form.controls['phone'].touched" class="error">
+                    Введіть коректний номер телефону.
+                </div>
+            </div>
+            <button class="send-button" (click)="submitForm()">Відправить</button>
+        </form>
+    <div class="form-descr">Натискаючи кнопку “Надіслати”, ви погоджуєтесь з <span>Правилами обробки персональних даних</span>.</div>
+</div>
