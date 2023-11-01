@@ -8,7 +8,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 export class MainPageComponent {
   languages: string[] = ['UA', 'RU'];
   selectedLanguage: string = 'UA';
-  isSubmitFormVisible = false;
+  isSubmitFormVisible = true;
   isModalVisible = false;
   isCookieVisible = true;
   showRoutes = true;
