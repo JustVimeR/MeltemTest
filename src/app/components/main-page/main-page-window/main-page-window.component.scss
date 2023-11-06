@@ -116,6 +116,13 @@
     font-size: 12px;
 }
 
+.error-input {
+    background-color: rgba(255, 204, 204, 0.20);
+  }
+
+  .error-input-phone {
+    background-color: rgba(255, 204, 204, 0.20);
+  }
 input.ng-invalid.ng-touched {
     border-radius: 5px;
     border: 1px solid #F00;

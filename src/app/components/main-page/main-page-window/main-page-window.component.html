@@ -14,6 +14,7 @@
                 class="form-input input-name"
                 placeholder="Ваше імя*"
                 formControlName="name"
+                [class.error-input]="form.controls['name'].invalid && form.controls['name'].touched"
                 />
                 <div *ngIf="form.controls['name'].invalid && form.controls['name'].touched" class="error">
                     Введіть ваше ім'я.
@@ -24,6 +25,7 @@
                 placeholder="+380-00-000-00-00*"
                 class="form-input input-with-bg"
                 formControlName="phone"
+                [class.error-input-phone]="form.controls['phone'].invalid && form.controls['phone'].touched"
                 maxlength="13"
                 phoneMask/>
                 <div *ngIf="form.controls['phone'].invalid && form.controls['phone'].touched" class="error">
