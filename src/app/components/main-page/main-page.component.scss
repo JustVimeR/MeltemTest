@@ -330,6 +330,7 @@
     font-weight: 700;
     color: #859BA6;
     margin-top: 105px;
+    text-align: center;
 }
 
 .menu-btn-wrapper{
@@ -544,7 +545,7 @@
     }
 }
 
-@media only screen and (min-width: 321px) and (max-width: 768px) {
+@media only screen and (min-width: 321px) and (max-width: 433px) {
     .mobile-dropdown-toggle {
         display: block;
     }
@@ -734,6 +735,202 @@
     .navbar {
         padding: 15px;
     }
+
+  }
+  
+  @media only screen and (min-width: 434px) and (max-width: 768px) {
+    .mobile-dropdown-toggle {
+        display: block;
+    }
+    .navbar-routes div:not(.mobile-dropdown-toggle) {
+        display: none;
+    }
+
+    .navbar-contact{
+        display: none;
+    }
+
+    .lang-btn{
+        display: none;
+    }
+
+    .banner_wrapper{
+        padding: 0 15px;
+    }
+
+    .btn_contact{
+        position: absolute;
+        bottom: 15px;
+        display: flex;
+        width: 100px;
+        height: 30px;
+        justify-content: center;
+        align-items: center;
+        color: #859BA6;
+        font-size: 12px;
+        font-weight: 500;
+        border-radius: 4px;
+        border: 1.5px solid #859BA6;
+        background-color:#FFF;
+    }
+
+    .banner_picture{
+        padding-top: 20px;
+        display: block;
+        width: 240px;
+        height: 170px;
+        margin: 0 auto;
+        margin-top: 120px;
+    }
+
+    .logo{
+        width: 91px;
+        height: 18px;
+    }
+
+    .header{
+        margin-top: 40px;
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 130%;
+    }
+
+    .sub_header{
+        margin-top: 10px;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 130%;
+    }
+
+    .product_btn{
+        margin-top: 15px;
+        width: 100px;
+        height: 35px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .descr_right{
+        margin-left: 115px;
+        margin-top: 120px;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 130%;
+        text-align: right; 
+    }
+    
+    .sub_descr_right{
+        margin-left: 115px;
+        margin-top: 5px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 130%;
+        text-align: right;
+    }
+    
+
+    .btn_detail{
+        margin-left: auto;
+        margin-top: 15px;
+        display: flex;
+        width: 100px;
+        height: 35px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    
+
+    .message-cookies{
+        padding: 15px 20px;
+        right: 2px;
+        top:435px;
+        width: 290px;
+        height: 78px;
+        border-radius: 4px;
+    }
+
+    .message-descr{
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+        width: 170px;
+        margin-right: 20px; 
+        height: 48px;
+    }
+
+    .message-descr span{
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 130%;
+    }
+
+    .message-btn{
+        width: 70px;
+        height: 35px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    .submit-form{
+        padding: 0px;
+        width: 209px;
+        height: 257px;
+    }
+
+    .submit-img{
+        margin-top: 40px;
+        display: flex;
+        width: 40px;
+        height: 40px;
+        padding: 3.333px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .submit-header{  
+        color:#333;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 130%;
+        margin: 0 auto;
+        width: 115px;
+        margin-top: 20px;
+    }
+
+    .submit-subheader{
+        color:#333;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 150%;
+        width: 129px;
+        margin: 0 auto;
+        margin-top: 15px;
+    }
+
+    .header {
+        font-size: calc(16px + (28 - 16) * ((100vw - 321px) / (768 - 321))); 
+    }
+
+    .banner-col {
+        padding: 20px;
+    }
+
+    .navbar {
+        padding: 15px;
+    }
+
+    
 
   }
   
